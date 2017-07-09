@@ -25,7 +25,7 @@ shinyUI(fluidPage(
     
       selectInput("gen", 
 
-                 label = "Number of generations to run", choices = list("5" = 5, "10" = 10, "15"=15, "20" = 20, "25"= 25, "30"=30), selected = 20),
+                 label = "Number of generations by 2100", choices = list("5" = 5, "10" = 10, "15"=15, "20" = 20, "25"= 25, "30"=30), selected = 20),
   	  
   	  numericInput("G11", 
 
