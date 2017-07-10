@@ -11,3 +11,11 @@ If you want to run the `evoTraj_noX11_6.0or8.5.R` script via a user-friendly web
 `SimMat_6.0or8.5.R` and `SimMat_2.6.R` essentially run `evoTraj_noX11_6.0or8.5.R` or `evoTraj_noX11_2.6.R` for several different generation times, selection regimes, and values of heritability and then plots the simulated change in population mean trait value in the year 2100 as a heatmap.  For these particular simulations, we assume a genetic correlation of 0, though other values can be explored by changing the line `evolved.zbar <- (subset(df.T, df.T$j==gen2100+1)$V3)[4]` to pick other components of the vector.
 
 Note: code for an earlier version of this model (which does not implement variable q over time) is available in [another github repository](https://github.com/em-bellis/bleachingevolution).
+
+#####Running an interactive web app for evolutionary trajectory simulations:
+`ui.R` and `server.R` contain code needed to create a user-friendly web app to run simulations via [Shiny for R](http://shiny.rstudio.com).  There is a 25 active hour monthly limit for my shinyapps.io account, so if the site is not working, it may be necessary to launch the app locally.  To do this, you will need [RStudio](https://www.rstudio.com), the 'shiny' package for R, and the `ui.R` and `server.R` files. Once everything is downloaded and installed, run the following commands from the RStudio terminal, replacing `~/path/to/shinyappfolder` with the path to the folder that contains `ui.R` and `server.R`:
+```
+> library(shiny)
+> runApp("~/path/to/shinyappfolder")
+```
+You will also need to install the following packages: MASS, car, sfsmisc, ggplot2, and gridExtra.
