@@ -5,7 +5,7 @@ This repository contains code associated with computer simulations and figures p
 #####Evolutionary trajectory simulation:
 Original code to calculate evolutionary trajectories was shared by Steve J. Arnold.  `evoTraj_noX11_2.6.R` and `evoTraj_noX11_6.0or8.5.R`are modified versions that do not use X11 and incorporate variation in the proportion of the population in each environment (q) over time.  It depicts a simulated evolutionary trajectory for bleaching response in two environments, as shown in Figure S1.
 
-If you want to run the `evoTraj_noX11_6.0or8.5.R` script via a user-friendly web app and try changing different parameter values yourself, there is a Shiny web app currently hosted at ... based on the `ui.R` and `server.R` files.
+If you want to run the `evoTraj_noX11_6.0or8.5.R` script via a user-friendly web app and try changing different parameter values yourself, there is a Shiny web app currently hosted at https://embellis.shinyapps.io/CoralEvoViaViaLande based on the `ui.R` and `server.R` files.
 
 #####Matrix of simulation results:
 `SimMat_6.0or8.5.R` and `SimMat_2.6.R` essentially run `evoTraj_noX11_6.0or8.5.R` or `evoTraj_noX11_2.6.R` for several different generation times, selection regimes, and values of heritability and then plots the simulated change in population mean trait value in the year 2100 as a heatmap.  For these particular simulations, we assume a genetic correlation of 0, though other values can be explored by changing the line `evolved.zbar <- (subset(df.T, df.T$j==gen2100+1)$V3)[4]` to pick other components of the vector.
