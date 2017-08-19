@@ -70,9 +70,12 @@ traject <- function(omega1, omega2, G11, gen2100) {
 }
 
 gens.to.run <- c(5,10,15,20,25,30,35)
-omega1.to.run <- c(0*P11, 3*P11, 8*P11, 15*P11, 24*P11, 35*P11, 48*P11, 63*P11, 80*P11, 99*P11) #corresponds to adaptive landscape 1..10x wider than character distribution 
-omega2.to.run <- c(0*P22, 3*P22, 8*P22, 15*P22, 24*P22, 35*P22, 48*P22, 63*P22, 80*P22, 99*P22) #corresponds to adaptive landscape 1..10x wider than character distribution
-h2.to.run <- c(0.9*P11, 0.8*P11, 0.7*P11, 0.6*P11, 0.5*P11, 0.4*P11, 0.3*P11, 0.2*P11, 0.1*P11, 0*P11) #corresponds to narrow-sense heritability of 0, 0.1, 0.2 ... 0.9
+#omega1.to.run <- c(0*P11, 3*P11, 8*P11, 15*P11, 24*P11, 35*P11, 48*P11, 63*P11, 80*P11, 99*P11) #corresponds to adaptive landscape 1..10x wider than character distribution 
+#omega2.to.run <- c(0*P22, 3*P22, 8*P22, 15*P22, 24*P22, 35*P22, 48*P22, 63*P22, 80*P22, 99*P22) #corresponds to adaptive landscape 1..10x wider than character distribution
+#h2.to.run <- c(0.9*P11, 0.8*P11, 0.7*P11, 0.6*P11, 0.5*P11, 0.4*P11, 0.3*P11, 0.2*P11, 0.1*P11, 0*P11) #corresponds to narrow-sense heritability of 0, 0.1, 0.2 ... 0.9
+omega1.to.run <- c(0*P11, 1*P11, 2*P11, 3*P11, 4*P11, 5*P11, 6*P11, 7*P11, 8*P11, 9*P11, 10*P11, 11*P11, 12*P11, 13*P11, 14*P11, 15*P11, 16*P11, 17*P11, 18*P11, 19*P11, 20*P11)
+omega2.to.run <- c(0*P22, 1*P22, 2*P22, 3*P22, 4*P22, 5*P22, 6*P22, 7*P22, 8*P22, 9*P22, 10*P22, 11*P22, 12*P22, 13*P22, 14*P22, 15*P22, 16*P22, 17*P22, 18*P22, 19*P22, 20*P22) #corresponds to adaptive landscape 1..10x wider than character distribution 
+h2.to.run <- c(0.95*P11, 0.9*P11, 0.85*P11, 0.8*P11, 0.75*P11, 0.7*P11, 0.65*P11, 0.6*P11, 0.55*P11, 0.5*P11, 0.45*P11, 0.4*P11, 0.35*P11, 0.3*P11, 0.25*P11, 0.2*P11, 0.15*P11, 0.1*P11, 0.05*P11, 0.0*P11) #corresponds to narrow-sense heritability of 0, 0.1, 0.2 ... 0.9
 
 df.U <- NULL
 for (l in 1:length(gens.to.run)) {
@@ -93,9 +96,10 @@ colnames(df.U) <- c("WidthSS_env1","WidthSS_env2","h2_env1","GensBy2100","Percen
 library(RColorBrewer)
 library(pheatmap)
 library(tidyr)
+library(viridis
 
 #display.brewer.all()
-col.pal <- brewer.pal(5, "GnBu")
+col.pal <- inferno(20)
 fixInNamespace("draw_colnames","pheatmap")  ##change hjust to 0.5 and rot to 0
 
 ##gen 10
